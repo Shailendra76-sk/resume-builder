@@ -1,9 +1,13 @@
 "use client";
 
 export default function TemplateModern({ data }) {
+  const handleDownload = () => {
+    window.print();
+  };
+
   return (
     <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
-      {/* Header Section - Modern Gradient */}
+      {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8">
         <h1 className="text-4xl font-bold">{data.fullName || "Your Name"}</h1>
         <p className="text-xl text-blue-100 mt-2">{data.jobTitle || "Professional Title"}</p>
@@ -81,15 +85,27 @@ export default function TemplateModern({ data }) {
         )}
       </div>
 
-      {/* Print Button */}
+      {/* Download Button */}
       <div className="p-4 bg-gray-100 text-center">
         <button 
-          onClick={() => window.print()}
+          onClick={handleDownload}
           className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
         >
-          🖨️ Download as PDF / Print
+          🖨️ Download PDF
         </button>
       </div>
+
+      {/* Print Styles */}
+      <style jsx global>{`
+        @media print {
+          button {
+            display: none;
+          }
+          body {
+            print-color-adjust: exact;
+          }
+        }
+      `}</style>
     </div>
   );
 }
