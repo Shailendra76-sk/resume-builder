@@ -1,3 +1,10 @@
+const [isPro, setIsPro] = useState(false);
+
+useEffect(() => {
+  const proStatus = localStorage.getItem("isPro");
+  setIsPro(proStatus === "true");
+  // ... rest of your code
+}, []);
 {/* Upgrade to Pro Section */}
 {!isPro && (
   <div className="mt-8 p-6 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl text-white text-center">
