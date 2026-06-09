@@ -11,7 +11,7 @@ export default function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // आगे हम असली auth लगाएंगे, अभी demo है
+    // Demo auth: real authentication will be wired up later.
     if (email && password) {
       localStorage.setItem("user", JSON.stringify({ email, name: name || email.split("@")[0] }));
       router.push("/dashboard");

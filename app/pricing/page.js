@@ -47,35 +47,26 @@ export default function PricingPage() {
   ];
 
   const applyCoupon = () => {
-    if (couponCode === "SHAILENDRA") {
+    if (couponCode === "WELCOME") {
       localStorage.setItem("isPro", "true");
       localStorage.setItem("proExpiry", "2026-12-31");
       setIsPro(true);
-      setMessage("✅ Coupon applied successfully! You now have Pro access for FREE!");
-      setTimeout(() => {
-        router.push("/dashboard");
-      }, 2000);
-    } else if (couponCode === "SHAILENDRA_PAPA") {
-      localStorage.setItem("isPro", "true");
-      localStorage.setItem("proExpiry", "2027-12-31");
-      setIsPro(true);
-      setMessage("✅ Special Papa Coupon! Pro access granted for 2 years!");
+      setMessage("Coupon applied successfully! You now have Pro access.");
       setTimeout(() => {
         router.push("/dashboard");
       }, 2000);
     } else {
-      setMessage("❌ Invalid coupon code. Try 'SHAILENDRA'");
+      setMessage("Invalid coupon code. Please check and try again.");
     }
   };
 
   const handleSubscribe = (planName) => {
     if (planName === "Pro") {
-      // Show payment popup
-      const wantsPayment = confirm("Pro subscription: ₹499/year\n\nPayment integration coming soon!\n\nFor now, use coupon code 'SHAILENDRA' for FREE Pro access.");
-      
+      const wantsPayment = confirm(
+        "Pro subscription: ₹499/year\n\nOnline payment is coming soon. Continue with a demo upgrade?"
+      );
+
       if (wantsPayment) {
-        // Simulate payment success
-        alert("Demo: Payment successful! (Real payment will be added later)\n\nPro access granted!");
         localStorage.setItem("isPro", "true");
         localStorage.setItem("proExpiry", "2026-12-31");
         setIsPro(true);
@@ -171,7 +162,7 @@ export default function PricingPage() {
             <p className="mt-3 text-center text-sm font-medium">{message}</p>
           )}
           <p className="mt-4 text-xs text-gray-500 text-center">
-            Special coupon for Shailendra Papa: <span className="font-mono bg-gray-100 px-2 py-1 rounded">SHAILENDRA</span>
+            Have a launch code? Enter it above to unlock Pro.
           </p>
         </div>
       </main>
