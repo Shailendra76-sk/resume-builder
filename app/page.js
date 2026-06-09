@@ -4,10 +4,11 @@ export default function Home() {
       <nav className="p-6 flex justify-between items-center max-w-6xl mx-auto">
         <h1 className="text-2xl font-bold text-blue-600">📄 ResumePro</h1>
         <div className="space-x-4">
+          <a href="/pricing" className="px-4 py-2 text-gray-700 hover:text-blue-600">Pricing</a>
           <a href="/login" className="px-4 py-2 text-gray-700 hover:text-blue-600">Login</a>
           <a href="/builder/new" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Start Free →</a>
         </div>
-      </nav> <a href="/pricing" className="px-4 py-2 text-gray-700 hover:text-blue-600">Pricing</a>
+      </nav>
       
       <main className="max-w-4xl mx-auto text-center py-20 px-4">
         <h2 className="text-5xl font-bold mb-6">

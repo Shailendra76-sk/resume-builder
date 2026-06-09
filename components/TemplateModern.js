@@ -31,7 +31,7 @@ export default function TemplateModern({ data }) {
       pdf.save('resume.pdf');
     } catch (error) {
       console.error('PDF generation error:', error);
-      alert('PDF generated successfully!');
+      alert('Could not generate the PDF. Please try again.');
     }
   };
 
